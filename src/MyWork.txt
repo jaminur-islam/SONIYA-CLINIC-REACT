@@ -1,0 +1,30 @@
+ HealthCare website
+-----------------------
+1. navbar add korbo//
+2. banner add korbo [slider optional]//
+3. service section korbo [6 ta service dekhabo]
+4. service section e button thakbe oitay click korle details dekhabe..[eita hbe privetRoute]
+5.email/password diye login system korte hbe
+6. google / github / facebook login system korte hbe
+7. 2 ta extra route set korte hbe
+8. not found dite hbe
+9. responsive korte hbe
+
+Bonus
+----------------
+1. site er meaning full nam dite hbe
+2. readme file ta edite korte hbe and 5/6 ta bulet point dite hbe description likhbo ;
+3. live site er link readme file e add korbo
+4. hosting e giye reload korle routing thik moto hocche kina dekhte hbe
+5. use Context Api
+6. code cleane
+7. component organized
+
+optional
+----------
+1. footer ta shundor vabe korte hbe
+2. mouse hover e animation add korbo
+3. icons use korbo
+4. img gulu optimize korbo and size kore nibo
+5. ekta valo font use korbo
+6. Css framework anything

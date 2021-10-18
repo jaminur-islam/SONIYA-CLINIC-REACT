@@ -1,0 +1,16 @@
+.login-section {
+  width: 100%;
+  height : 520px;
+  background: url('../../header-img/bg11.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.mrgin {
+  margin-right: 10px;
+}
+@media only screen and (max-width: 560px) {
+  .mrgin {
+    margin-right: 0px;
+  }
+}

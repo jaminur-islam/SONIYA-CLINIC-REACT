@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router , Switch , Route } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./component/Home/Home";
+import Login from './component/Login/Login';
+import Navigation from './component/Header/Navigation/Navigation';
+import SignUp from './component/SignUp/SignUp';
+import Details from './component/Details/Details';
+import ContextProvider from './context/ContextProvider';
+import PrivetRoute from './component/PrivetRoute/PrivetRoute';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+      <ContextProvider>
+       <Router>
+      <Navigation> </Navigation>
+      <Switch>
+       
+       <Route path='/home'>
+          <Home> </Home>
+       </Route>
+
+       <Route exact path='/'>
+          <Home> </Home>
+       </Route>
+
+       <Route path='/login'>
+         <Login> </Login>
+       </Route>
+
+       <Route path='/signup'>
+         <SignUp> </SignUp>
+       </Route>
+
+       <PrivetRoute path='/details/:id'>
+         <Details> </Details>
+        </PrivetRoute>
+
+       <Route exact path='*'>
+          <h1> Eror </h1>
+       </Route>
+
+      </Switch>
+    
+    </Router>
+    </ContextProvider>
+
   );
 }
 

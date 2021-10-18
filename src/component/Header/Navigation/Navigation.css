@@ -1,0 +1,116 @@
+.navigation {
+  background-color:#589ef5;
+}
+
+.navbar-nav a:hover  {
+  background-color: rgb(134, 188, 204);
+  border-radius: 10px;
+}
+
+.navbar-nav a:first-child {
+  background-color: rgb(134, 188, 204);
+  border-radius: 10px;
+}
+
+
+/* Banner design */
+.banner {
+  width: 100%;
+  height: 80vh;
+  background:linear-gradient(rgb(83, 165, 202), rgb(255, 255, 255) , white , white) ;
+  margin-bottom: 40px;
+ 
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-container h1 {
+  font-size: 50px;
+  color:rgb(17, 68, 92);
+  font-weight: 700;
+}
+
+.banner-container p {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(73, 70, 70);
+  line-height: 30px;
+}
+
+.banner img {
+  width: 600px;
+  height: 500px;
+}
+
+
+
+@media only screen and (max-width: 360px) {
+  .banner-container .pera {
+    width: 100%;
+  }
+
+  .navbar-nav a:hover  {
+    background-color:none;
+    border-radius: 0px;
+  }
+  
+  .navbar-nav a:first-child {
+    background-color:#589ef5 ;
+    border-radius: 0px;
+  }
+  
+  
+
+  .banner img {
+    display: none;
+  }
+
+  .banner {
+    width: 100%;
+    height: 25vh;
+  }
+  .banner-container h1 {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 30px;
+  }
+  .banner-container p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 768px) {
+   .banner {
+     width: 100%;
+    height: 15vh;
+    margin-bottom: 30px;
+  }
+  .banner-container .pera {
+    width: 100%;
+  }
+
+  .banner img {
+    display: none;
+  }
+
+  .banner {
+    width: 100%;
+    height: 15vh;
+  }
+  .banner-container h1 {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 30px;
+  }
+  .banner-container p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  
+}
