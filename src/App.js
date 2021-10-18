@@ -7,6 +7,7 @@ import SignUp from './component/SignUp/SignUp';
 import Details from './component/Details/Details';
 import ContextProvider from './context/ContextProvider';
 import PrivetRoute from './component/PrivetRoute/PrivetRoute';
+import Error from './component/Error/Error';
 
 
 
@@ -39,7 +40,7 @@ function App() {
         </PrivetRoute>
 
        <Route exact path='*'>
-          <h1> Eror </h1>
+           <Error> </Error>
        </Route>
 
       </Switch>

@@ -3,7 +3,7 @@ import img from '../../../header-img/team.png'
 
 const Banner = () => {
   return ( 
-    <section className="banner d-inline-block py-3"  id='home'>
+    <section className="banner d-inline-block py-3" id='home'>
       <div className='container '>  
 
       <div className='banner-container'> 

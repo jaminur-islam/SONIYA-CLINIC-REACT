@@ -6,21 +6,31 @@ import useAuth from "../../Hooks/useAuth";
 import './Login.css'
 
 const Login = () => { 
-  const {handleGoogle , handleGithub , signInWithEmailAndPassword , auth} = useAuth()
+  const { setLoading , handleGoogle , handleGithub , signInWithEmailAndPassword , auth} = useAuth()
   const location = useLocation()
   const locasionis = location?.state?.from || '/home'
   const history = useHistory();
 
   const google = () =>{
+    setLoading(true)
     handleGoogle().then(result=>{
       console.log(result)
       history.push(locasionis)
+    }).catch((error)=>{
+
+    }).finally(()=>{
+      setLoading(false)
     })
   }
 
   const github = () =>{
+    setLoading(true)
     handleGithub().then(result=>{
       history.push(locasionis);
+    }).catch((error)=>{
+
+    }).finally(()=>{
+      setLoading(false)
     })
   }
 
@@ -41,11 +51,17 @@ const Login = () => {
 
 
   const getValue = (e) =>{
+    setLoading(true);
     e.preventDefault();
     console.log(email , pass);
     signInWithEmailAndPassword(auth , email , pass)
     .then(result=>{
+      history.push(locasionis);
       console.log(result);
+    }).catch((error)=>{
+
+    }).finally(()=>{
+      setLoading(false)
     })
   }
   

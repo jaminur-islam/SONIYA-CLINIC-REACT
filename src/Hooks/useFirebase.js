@@ -14,6 +14,9 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const useFirebase = () => {
+
+  const [loading, setLoading] = useState(true);
+
   // user state
   const [user , setUser] = useState({}); 
 
@@ -33,9 +36,12 @@ const useFirebase = () => {
 
 // sign Out  
    const logOut = () =>{
+     setLoading(true);
      signOut(auth)
      .then(()=>{
        setUser({})
+     }).finally(()=>{
+       setLoading(false);
      })
    }
 
@@ -47,12 +53,14 @@ const useFirebase = () => {
       }else {
         setUser({})
       }
+
+      setLoading(false);
     })
 
     return ()=> unsubscribed;
   },[])
 
-return {handleGithub , handleGoogle , user , error ,logOut , auth ,signInWithEmailAndPassword, createUserWithEmailAndPassword , }
+return {handleGithub , handleGoogle , user , error ,logOut , auth ,signInWithEmailAndPassword, createUserWithEmailAndPassword , loading, setLoading}
 };
 
 export default useFirebase;
