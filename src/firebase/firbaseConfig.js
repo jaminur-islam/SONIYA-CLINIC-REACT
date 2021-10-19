@@ -4,7 +4,7 @@ const firebaseConfig = {
   projectId: "soniya-clinic",
   storageBucket: "soniya-clinic.appspot.com",
   messagingSenderId: "503768085522",
-  appId: "1:503768085522:web:ce37fdcfed1912ec9ad4cb"
-}
+  appId: "1:503768085522:web:ce37fdcfed1912ec9ad4cb",
+};
 
 export default firebaseConfig;

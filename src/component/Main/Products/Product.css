@@ -9,7 +9,7 @@
   margin: 0 auto;
   margin-top: 10px;
 }
-.product h3{
+.product h3 {
   color: rgb(3, 53, 49);
 }
 
@@ -20,7 +20,7 @@
 
 .product button {
   border: 0;
-  padding:  5px 20px;
+  padding: 5px 20px;
   background-color: rgb(18, 59, 241);
   color: white;
   border-radius: 10px;
@@ -28,12 +28,9 @@
 }
 
 .product img:hover {
-
 }
 
-
-
-@media only screen and  (max-width: 920px) {
+@media only screen and (max-width: 920px) {
   .product img {
     width: 100%;
   }
@@ -42,4 +39,3 @@
     width: 100%;
   }
 }
-
