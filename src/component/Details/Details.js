@@ -17,7 +17,6 @@ const Details = () => {
        <h6> Qualifications : {stady}</h6> 
        <h6> Home : {Address} </h6> 
        <h6> Call: 00+ 223 3331 </h6> 
-       <p></p>
     </div>
     </div>
   );

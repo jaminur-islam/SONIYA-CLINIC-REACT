@@ -6,10 +6,9 @@ import useAuth from '../../Hooks/useAuth';
 
 const SignUp = () => {
 
-  const location = useLocation();
-  console.log(location?.state?.from);
 
-  const {createUserWithEmailAndPassword , auth , user , updateProfile} = useAuth();
+
+  const {createUserWithEmailAndPassword , auth , user , setUser, updateProfile} = useAuth();
 
   // Name state 
   const [name , setName] = useState(' ');
@@ -36,17 +35,20 @@ const SignUp = () => {
   }
 
   const histori = useHistory();
+  
+  
   const getValue = (e) =>{
     e.preventDefault();
-    console.log(email , pass , name);
     createUserWithEmailAndPassword(auth ,email , pass)
     .then((userCredential)=>{
       upDateProfile();
-      histori.push('/home')
-      console.log(userCredential.user)
-
+        histori.push('/home')
+        window.location.reload()
     })
   }
+   
+  
+ 
   
   const upDateProfile = () =>{
     updateProfile(auth.currentUser, {
@@ -85,7 +87,7 @@ const SignUp = () => {
   </Button>
   
   
-  <Link to='/login' className='text-decoration-none ms-4'> Have a account? </Link>
+  <Link to='/login' className='text-decoration-none ms-1'> Have a account? </Link>
   <br />
 </Form>
     </div>

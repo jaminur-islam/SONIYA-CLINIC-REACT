@@ -8,6 +8,9 @@ import Details from './component/Details/Details';
 import ContextProvider from './context/ContextProvider';
 import PrivetRoute from './component/PrivetRoute/PrivetRoute';
 import Error from './component/Error/Error';
+import Order from './component/Order/Order';
+import Confrim from './component/Confrim/Confrim';
+import Homeservice from './component/HomeService/Homeservice';
 
 
 
@@ -39,6 +42,21 @@ function App() {
          <Details> </Details>
         </PrivetRoute>
 
+        <PrivetRoute exact path='/homeservice'>
+           <Homeservice> </Homeservice>
+        </PrivetRoute>
+
+
+        <PrivetRoute path='/order/:id'>
+          <Order> </Order>
+        </PrivetRoute>
+
+        <PrivetRoute exact path='/orderdone'>
+           <Confrim> </Confrim>
+        </PrivetRoute>
+
+         
+ 
        <Route exact path='*'>
            <Error> </Error>
        </Route>

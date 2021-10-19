@@ -60,7 +60,7 @@ const useFirebase = () => {
     return ()=> unsubscribed;
   },[])
 
-return {handleGithub , handleGoogle , user , error ,logOut , auth ,signInWithEmailAndPassword, createUserWithEmailAndPassword , loading, setLoading , updateProfile }
+return {handleGithub , handleGoogle , user , error ,logOut , auth ,signInWithEmailAndPassword, createUserWithEmailAndPassword , loading, setLoading , updateProfile , setUser }
 };
 
 export default useFirebase;

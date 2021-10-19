@@ -9,7 +9,7 @@ const Doctors = () => {
    history.push(`/details/${id}`);
   }
 
-  console.log(doctors);
+
   return (
     <div className='container product-container mt-5' id='service'>
     <h1> Services </h1>

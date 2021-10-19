@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import './Product.css'
 
 const Products = () => {
   const [medicine , setMedicine] = useState([])
+
+  const history = useHistory()
+  const getId = (id) =>{
+    history.push(`/order/${id}`);
+  }
 
   useEffect(()=>{
     fetch('./medicineData.json')
@@ -25,7 +31,7 @@ const Products = () => {
                       <h5> {md.name} </h5>
                       <h3>price: $ {md.price} </h3>
                       
-                      <button> Details  </button>
+                      <button onClick={()=>getId(md.id)}> Order  </button>
                     </div>
                 </div>
                )
@@ -38,3 +44,5 @@ const Products = () => {
 };
 
 export default Products;
+
+

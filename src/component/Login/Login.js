@@ -56,7 +56,6 @@ const Login = () => {
     signInWithEmailAndPassword(auth , email , pass)
     .then(result=>{
       history.push(locasionis);
-      console.log(result);
     }).catch((error)=>{
 
     }).finally(()=>{
@@ -83,7 +82,7 @@ const Login = () => {
   <Button className='btn btn-primary' type="submit">
     Login
   </Button>
-  <Link to='/signup' className='text-decoration-none ms-4'> Create a new account </Link>
+  <Link to='/signup' className='text-decoration-none ms-1'> Create new account </Link>
   <br />
   <span className='mt-2 d-block'> <Link to="#"> Forget Password </Link></span>
 </Form>

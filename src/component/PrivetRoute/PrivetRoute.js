@@ -4,7 +4,6 @@ import useAuth from '../../Hooks/useAuth';
 
 const PrivetRoute = ({children , ...rest}) => {
   const {user , loading } = useAuth();
-  console.log(loading)
 
    if(loading){
      return (
