@@ -6,7 +6,8 @@ import useAuth from "../../../Hooks/useAuth";
 import "./Navigation.css";
 
 const Navigation = () => {
-  const {user , logOut} = useAuth();
+  const {user , logOut , loading} = useAuth();
+  
   return (
     <Navbar expand="lg" className="sticky-top navigation" >
       <Container className="container" fluid>
@@ -36,14 +37,14 @@ const Navigation = () => {
             
           
           {
-            user.email?<div className='d-flex justify-content-center align-items-center'>       
-            <span className='text-black'> {user.displayName}</span>
-            <img className='mx-2 rounded-circle' width='35' src={user.photoURL} alt="" />
+            user?<div className='d-flex justify-content-center align-items-center'>       
+            <span className='text-black '> {user?.displayName}</span>
+            <img className='mx-2 rounded-circle' width='35' src={user?.photoURL} alt="" />
             </div>: <span> </span>
           }  
 
            {
-             user.email?<Nav.Link as={NavLink} onClick={logOut} className="text-white" to="/login">
+             user?<Nav.Link as={NavLink} onClick={logOut} className="text-white" to="/login">
              LOGOUT
             </Nav.Link>:<Nav.Link as={NavLink} className="text-white" to="/login">
              LOGIN

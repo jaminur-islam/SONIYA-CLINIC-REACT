@@ -1,13 +1,15 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { Link , useHistory } from 'react-router-dom';
+import { Link , useHistory , useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const SignUp = () => {
 
-  const {createUserWithEmailAndPassword , auth , user} = useAuth();
-  console.log(createUserWithEmailAndPassword)
+  const location = useLocation();
+  console.log(location?.state?.from);
+
+  const {createUserWithEmailAndPassword , auth , user , updateProfile} = useAuth();
 
   // Name state 
   const [name , setName] = useState(' ');
@@ -33,21 +35,26 @@ const SignUp = () => {
     setPass(e.target.value);
   }
 
-
+  const histori = useHistory();
   const getValue = (e) =>{
     e.preventDefault();
     console.log(email , pass , name);
     createUserWithEmailAndPassword(auth ,email , pass)
     .then((userCredential)=>{
-      userCredential.user.displayName = name;
+      upDateProfile();
+      histori.push('/home')
       console.log(userCredential.user)
+
     })
   }
   
-const histori = useHistory();
-  const goLogin = () =>{
-       histori.push('/login')
+  const upDateProfile = () =>{
+    updateProfile(auth.currentUser, {
+      displayName: name
+    }).then(()=>{
+    })
   }
+ 
 
   return (
   
@@ -59,7 +66,7 @@ const histori = useHistory();
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Name</Form.Label>
-    <Form.Control onBlur={getName} type="text" placeholder="Your name" />
+    <Form.Control onBlur={getName} type="text" placeholder="Your name" required />
     </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">

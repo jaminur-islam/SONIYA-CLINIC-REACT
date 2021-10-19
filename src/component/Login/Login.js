@@ -53,7 +53,6 @@ const Login = () => {
   const getValue = (e) =>{
     setLoading(true);
     e.preventDefault();
-    console.log(email , pass);
     signInWithEmailAndPassword(auth , email , pass)
     .then(result=>{
       history.push(locasionis);
@@ -73,12 +72,12 @@ const Login = () => {
   <Form onSubmit={getValue} className='container w-75 mt-2'>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control onBlur={getEmail} type="email" placeholder="Enter email" />
+    <Form.Control onBlur={getEmail} type="email" placeholder="Enter email" required />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control onBlur={getPass} type="password" placeholder="Password" />
+    <Form.Control onBlur={getPass} type="password" placeholder="Password" required />
   </Form.Group>
   
   <Button className='btn btn-primary' type="submit">
@@ -91,7 +90,7 @@ const Login = () => {
 
 <div className='text-center'>        
  {/* google */}
- <button onClick={google}  className='px-5 py-2 mt-3 mrgin  bg-success rounded text-white border-0'> <i className="fab fa-google text-danger  bg-white py-2 px-2"></i> Continue with Google </button>
+ <button onClick={google}  className='px-5 py-2 mt-3 mrgin  bg-success rounded text-white border-0'> <i className="fab fa-google text-danger rounded-circle bg-white py-2 px-2"></i> Continue with Google </button>
   {/*github  */}
       <button onClick={github}  className='px-5 mt-2 py-2 mt-3 bg-black rounded text-white border-0'> <i className="fab fa-github  px-2  py-2"></i> Continue with Github </button>
   </div>
